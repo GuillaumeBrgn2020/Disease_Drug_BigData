@@ -1,0 +1,11 @@
+maladie :
+	input : Syndactyly
+
+	sign_id : HP:0001159
+	disease_id : 100050
+	
+	output :
+		disease_name : 100050 AARSKOG SYNDROME, AUTOSOMAL DOMINANT
+	
+drug indication :
+	

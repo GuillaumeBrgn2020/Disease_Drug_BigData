@@ -1,0 +1,60 @@
+@startuml Diagramme de Classes 
+
+
+object BrugBankXML{
+    desctiption = "liste de médicaments"
+    
+    indication = "liste de symptomes et maladies qu'un médicament peur traiter"
+    toxicity = "liste de symptomes (effets secondaires) qu'un médicament peut provoquer"
+}
+
+object OmimTXT{
+    desctiption = "liste de maladies génétiques dans le champ *FIELD* CS"
+    *FIELD* CS = "signes et symptomes d'une maladie génétique"
+    *FIELD* NO = "identifiant OMIM"
+}
+
+object OmimCSV{
+    desctiption = ""
+    CUI = "identifiant unique de la maladie/du symptome"
+}
+
+object SiderSQL{
+    description = "liste des informations de notices de médicament"
+
+    meddra_CUI = "identifiant unique de la maladie/du symptome"
+
+    meddraAllSe_CUI = "identifiant unique de la maladie/du symptome"
+    meddraAllSe_SEname = "nom d'un effet secondaire"
+
+    meddraAllIndictions_CUI = "identifiant unique de la maladie/du symptome"
+
+    meddraFreq_CUI = "identifiant unique de la maladie/du symptome"
+    meddraFreq_SEname = "nom d'un effet secondaire"
+}
+
+object HpoOBO{
+    description="liste de synonymes pour chaque symptome"
+    id="identifiant unique du symptome dans hpo"
+    name="nom du symptome"
+    synonym="un champ pour chaque synonyme du symptome"
+}
+
+object hpoAnnotationSQLITE{
+    description="lien hpo-omim"
+    sign_id="identifiant unique du symptome dans hpo"
+    disease_db = "bd d'origine"
+    disease_id = "identifiant dans la bd d'origine"
+}
+
+object sider{
+    meddra_all_indication :
+        idStich = stich_compound_id
+        CUI = cui
+        indication = concept_name ou meddra_concept_name
+    meddra_all_se :
+        CUI = cui
+        sideEffect = side_effect_name
+}
+
+@enduml 

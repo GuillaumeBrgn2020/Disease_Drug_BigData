@@ -1,0 +1,16 @@
+@startuml Index Diagram
+
+
+object BrugBankXMLIndex{
+    id_drug : id
+    indication : text 
+    toxicity : text
+}
+
+object ChimicalSourcesIndex{
+    stitch_id : id
+    atc : text
+}
+
+
+@enduml 
